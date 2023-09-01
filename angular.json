@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-t2-2023-2": {
+    "angular-topicos2-2023-2": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-t2-2023-2",
+            "outputPath": "dist/angular-topicos2-2023-2",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-t2-2023-2:build:production"
+              "browserTarget": "angular-topicos2-2023-2:build:production"
             },
             "development": {
-              "browserTarget": "angular-t2-2023-2:build:development"
+              "browserTarget": "angular-topicos2-2023-2:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-t2-2023-2:build"
+            "browserTarget": "angular-topicos2-2023-2:build"
           }
         },
         "test": {

@@ -1,5 +1,5 @@
 export class Estado {
-    id!:number;
+    id!: number;
     nome!: string;
     sigla!: string;
 }
