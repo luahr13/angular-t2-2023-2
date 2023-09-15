@@ -1,22 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Estado } from 'src/app/models/estado.model';
 import { EstadoService } from 'src/app/services/estado.service';
 
 @Component({
-  selector: 'app-estados',
-  templateUrl: './estado.component.html',
-  styleUrls: ['./estado.component.css']
+  selector: 'app-cidade-list',
+  templateUrl: './cidade-list.component.html',
+  styleUrls: ['./cidade-list.component.css']
 })
-export class EstadosComponent implements OnInit {
-
+export class CidadeListComponent {
   estados: Estado[] = [];
 
   constructor(private estadoService: EstadoService) {}
 
   ngOnInit(): void {
-    this.estadoService.getEstados().subscribe(data => {
+    this.estadoService.findAll().subscribe(data => {
       this.estados = data;
     });
   }
-
 }
