@@ -3,6 +3,7 @@ import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Cidade } from '../models/cidade.model';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,11 +21,19 @@ export class CidadeService {
   }
 
   save(cidade: Cidade): Observable<Cidade> {
-    return this.http.post<Cidade>(`${this.baseURL}/cidades`, cidade);
+    const obj = {
+      nome: cidade.nome,
+      idEstado: cidade.estado.id
+    }
+    return this.http.post<Cidade>(`${this.baseURL}/cidades`, obj);
   }
 
   update(cidade: Cidade): Observable<Cidade> {
-    return this.http.put<Cidade>(`${this.baseURL}/cidades/${cidade.id}`, cidade );
+    const obj = {
+      nome: cidade.nome,
+      idEstado: cidade.estado.id
+    }
+    return this.http.put<Cidade>(`${this.baseURL}/cidades/${cidade.id}`, obj );
   }
 
   delete(cidade: Cidade): Observable<any> {

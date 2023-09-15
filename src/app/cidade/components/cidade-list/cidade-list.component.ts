@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Estado } from 'src/app/models/estado.model';
-import { EstadoService } from 'src/app/services/estado.service';
+import { Cidade } from 'src/app/models/cidade.model';
+import { CidadeService } from 'src/app/services/cidade.service';
 
 @Component({
   selector: 'app-cidade-list',
@@ -8,13 +8,15 @@ import { EstadoService } from 'src/app/services/estado.service';
   styleUrls: ['./cidade-list.component.css']
 })
 export class CidadeListComponent {
-  estados: Estado[] = [];
 
-  constructor(private estadoService: EstadoService) {}
+  tableColumns: string[] = ['id-column', 'nome-column', 'estado-column'];
+  cidades: Cidade[] = [];
+
+  constructor(private cidadeService: CidadeService) {}
 
   ngOnInit(): void {
-    this.estadoService.findAll().subscribe(data => {
-      this.estados = data;
+    this.cidadeService.findAll().subscribe(data => {
+      this.cidades = data;
     });
   }
 }
